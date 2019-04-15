@@ -32,35 +32,35 @@ function generateDirs() {
 		let direction = {};
 		switch(token.substring(0,1)) {
 			case "A":
-				direction.text = "Walk straight for " + token.substring(1) + " ft.";
+				direction.text = "Walk straight for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "continue.svg";
 				break;
 			case "B":
-				direction.text = "Turn left and walk for " + token.substring(1) + " ft.";
+				direction.text = "Turn left and walk for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "turn_left.svg";
 				break;
 			case "C":
-				direction.text = "Turn slightly left and walk for " + token.substring(1) + " ft.";
+				direction.text = "Turn slightly left and walk for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "turn_slight_left.svg";
 				break;
 			case "D":
-				direction.text = "Turn sharply left and walk for " + token.substring(1) + " ft.";
+				direction.text = "Turn sharply left and walk for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "turn_sharp_left.svg";
 				break;
 			case "E":
-				direction.text = "Turn right and walk for " + token.substring(1) + " ft.";
+				direction.text = "Turn right and walk for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "turn_right.svg";
 				break;
 			case "F":
-				direction.text = "Turn slightly right and walk for " + token.substring(1) + " ft.";
+				direction.text = "Turn slightly right and walk for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "turn_slight_right.svg";
 				break;
 			case "G":
-				direction.text = "Turn sharply right and walk for " + token.substring(1) + " ft.";
+				direction.text = "Turn sharply right and walk for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "turn_sharp_right.svg";
 				break;
 			case "H":
-				direction.text = "Turn around and walk for " + token.substring(1) + " ft.";
+				direction.text = "Turn around and walk for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "uturn.svg";
 				break;
 			case "I":
@@ -88,35 +88,35 @@ function generateDirs() {
 				direction.image = "stairs-up.svg";
 				break;
 			case "S":
-				direction.text = "Walk north for " + token.substring(1) + " ft.";
+				direction.text = "Walk north for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			case "T":
-				direction.text = "Walk north west for " + token.substring(1) + " ft.";
+				direction.text = "Walk north west for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			case "U":
-				direction.text = "Walk west for " + token.substring(1) + " ft.";
+				direction.text = "Walk west for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			case "V":
-				direction.text = "Walk south west for " + token.substring(1) + " ft.";
+				direction.text = "Walk south west for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			case "W":
-				direction.text = "Walk south for " + token.substring(1) + " ft.";
+				direction.text = "Walk south for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			case "X":
-				direction.text = "Walk south east for " + token.substring(1) + " ft.";
+				direction.text = "Walk south east for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			case "Y":
-				direction.text = "Walk east for " + token.substring(1) + " ft.";
+				direction.text = "Walk east for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			case "Z":
-				direction.text = "Walk north east for " + token.substring(1) + " ft.";
+				direction.text = "Walk north east for " + parseInt(token.substring(1, 6)) + " ft. " + token.substring(6);
 				direction.image = "pedestrian-walking.svg";
 				break;
 			default:
