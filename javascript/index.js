@@ -65,45 +65,59 @@ function generateDirs() {
 				break;
 			case "I":
 				direction.text = "Walk to the elevator.\n";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "J":
 				direction.text = "Walk to the stairs.\n";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "N":
 				direction.text = "Take the elevator up from floor " + floors[token.substring(1,2)] + " to floor " + floors[token.substring(2,3)];
+				direction.image = "elevator.svg";
 				break;
 			case "O":
 				direction.text = "Take the elevator down from floor " + floors[token.substring(1,2)] + " to floor " + floors[token.substring(2,3)];
+				direction.image = "elevator.svg";
 				break;
 			case "P":
 				direction.text = "Take the stairs up from floor " + floors[token.substring(1,2)] + " to floor " + floors[token.substring(2,3)];
+				direction.image = "stairs-up.svg";
 				break;
 			case "Q":
 				direction.text = "Take the stairs down from floor " + floors[token.substring(1,2)] + " to floor " + floors[token.substring(2,3)];
+				direction.image = "stairs-up.svg";
 				break;
 			case "S":
 				direction.text = "Walk north for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "T":
 				direction.text = "Walk north west for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "U":
 				direction.text = "Walk west for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "V":
 				direction.text = "Walk south west for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "W":
 				direction.text = "Walk south for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "X":
 				direction.text = "Walk south east for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "Y":
 				direction.text = "Walk east for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			case "Z":
 				direction.text = "Walk north east for " + token.substring(1) + " ft.";
+				direction.image = "pedestrian-walking.svg";
 				break;
 			default:
 				direction.text = "Houston we have a problem";
@@ -116,7 +130,7 @@ function generateDirs() {
 		if (direction.image !== undefined) {
 			table.innerHTML += "\n" +
 				"        <tr>\n" +
-				"          <td scope=\"row\"><img src='images\\" + direction.image + "' \></td>\n" +
+				"          <td scope=\"row\"><img width='20px' height='20px' src='images\\" + direction.image + "' \></td>\n" +
 				"          <td>" + direction.text + "</td>\n" +
 				"        </tr>";
 		} else {
