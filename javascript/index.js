@@ -127,12 +127,23 @@ function generateDirs() {
 		directions.push(direction);
 
 		let table = document.getElementById("dir_table");
+		let caro = document.getElementById("carousel");
 		if (direction.image !== undefined) {
 			table.innerHTML += "\n" +
 				"        <tr>\n" +
 				"          <td scope=\"row\"><img width='20px' height='20px' src='images\\" + direction.image + "' \></td>\n" +
 				"          <td>" + direction.text + "</td>\n" +
 				"        </tr>";
+
+			if (i === 0) {
+				caro.innerHTML += "<div class='carousel-item active'> <img style='max-width: 100%; max-height: 100%' src='images\\"
+					+ direction.image +
+					"'> <svg width='100%' height='20%'><rect fill='#fff' width='100%' height='20%'></rect></svg><div class='carousel-caption'> <h5>"
+					+ direction.text
+					+ "</h5> </div>"
+			} else {
+				caro.innerHTML += "<div class=\"carousel-item\"> <img style=\"max-width: 100%; max-height: 100%\" src='images\\" + direction.image + "'> <svg fill='#fff' width='100%' height='20%'><rect width='100%' height='20%'></rect></svg><div class=\"carousel-caption\"> <h5>" + direction.text + "</h5> </div>"
+			}
 		} else {
 			table.innerHTML += "\n" +
 				"        <tr>\n" +

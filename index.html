@@ -6,24 +6,91 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script src="javascript/index.js"></script>
   <title>Hospital Navigation</title>
+  <style>
+    body {
+      margin-bottom: 50px;
+    }
+    .carousel-control-next-icon:after
+    {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")
+    }
+
+    .carousel-control-prev-icon:after {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+
+    .carousel-caption {
+      color: black
+    }
+
+    /* not active */
+    .nav-pills .nav-link:not(.active) {
+      background-color: #6B6D6F;
+    }
+    .nav-pills .nav-link .active {
+      background-color: #012D5A;
+      color: white;
+    }
+
+    .nav-pills .nav-link {
+      color: #fff;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      color: #fff;
+      background-color: #012D5A;
+    }
+  </style>
 </head>
 <body onload="generateDirs()">
 <div class="container">
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm-4">
     </div>
-    <div class="col-sm">
-      <table class="table">
-        <tbody id="dir_table">
-        </tbody>
-      </table>
+    <div class="col-sm-4">
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="list" class="container tab-pane active"><br>
+          <table class="table">
+            <tbody id="dir_table">
+            </tbody>
+          </table>
+        </div>
+        <div id="caro" class="container tab-pane fade"><br>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" data-wrap="false">
+            <div class="carousel-inner" id="carousel">
+
+            </div>
+            <a style="height: 50%" class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a style="height: 50%" class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm">
+    <div class="col-sm-4">
     </div>
   </div>
 </div>
+      <div style="position: fixed; bottom: 0; width: 100%; background-color: #fff">
+
+        <ul class="nav nav-pills nav-fill" role="tablist">
+          <li class="nav-item align-items-center" width="50%">
+            <a class="nav-link active" data-toggle="pill" href="#list"><i class="fas fa-list"></i></a>
+          </li>
+          <li class="nav-item align-items-center">
+            <a class="nav-link" data-toggle="pill" href="#caro"><i class="fas fa-arrows-alt-h"></i></a>
+          </li>
+        </ul>
+      </div>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
