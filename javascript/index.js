@@ -29,6 +29,7 @@ function generateDirs() {
 	let directions = [];
 	for (i = 0; i < tokens.length; i++) {
 		let token = tokens[i];
+		token.replaceAll("$", " ");
 		let direction = {};
 		switch(token.substring(0,1)) {
 			case "A":
@@ -153,3 +154,9 @@ function generateDirs() {
 		}
 	}
 }
+
+
+String.prototype.replaceAll = function(search, replacement) {
+	var target = this;
+	return target.split(search).join(replacement);
+};
