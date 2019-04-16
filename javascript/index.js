@@ -29,7 +29,7 @@ function generateDirs() {
 	let directions = [];
 	for (i = 0; i < tokens.length; i++) {
 		let token = tokens[i];
-		token.replaceAll("$", " ");
+		token = token.replaceAll("$", " ");
 		let direction = {};
 		switch(token.substring(0,1)) {
 			case "A":
