@@ -21,7 +21,19 @@ function generateCal() {
 }
 
 function downloadIcal() {
-	let msg = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nORGANIZER;CN=" + eorg + "\nDTSTART:" + convertDateToICS(starttime) + "\nDTEND:" + convertDateToICS(endtime) + "\nSUMMARY:" + ename + "\nLOCATION:" + eloc + "\nEND:VEVENT\nEND:VCALENDAR";
+	let msg = "BEGIN:VCALENDAR\n" +
+		"PRODID:-//Google Inc//Google Calendar 70.9054//EN\n" +
+		"VERSION:2.0\n" +
+		"BEGIN:VEVENT\n" +
+		"DTSTART;TZID=America/New_York:" + convertDateToICS(starttime) + "\n" +
+		"DTEND;TZID=America/New_York:" + convertDateToICS(endtime) +"\n" +
+		"DTSTAMP:" + convertDateToICS(starttime) + "Z\n" +
+		"UID:" + convertDateToICS(starttime) + "@narwhal.com\n" +
+		"DESCRIPTION:\n" +
+		"LOCATION:" + eloc + "\n" +
+		"SUMMARY:" + ename + "\n" +
+		"END:VEVENT\n" +
+		"END:VCALENDAR"
 	window.open( "data:text/calendar;charset=utf8," + encodeURIComponent(msg));
 }
 
