@@ -25,7 +25,7 @@ function generateSVG(segId) {
 	let segCountForId = -1;
 	let x1, y1, x2, y2;
 
-	let segCount = 1;
+	let segCount = 2;
 	let edgeCount = 0;
 
 	let svgPathsBySegment = {};
@@ -194,7 +194,7 @@ function generateDirs() {
 				break;
 			case "Q":
 				direction.text = "Take the stairs down from floor " + floors[token.substring(1,2)] + " to floor " + floors[token.substring(2,3)];
-				direction.image = "stairs-up.svg";
+				direction.image = "stairs-down.svg";
 				isElevatorOrStairs = true;
 				break;
 			case "S":
@@ -275,8 +275,8 @@ function generateDirs() {
 				} else {
 					caro.innerHTML += `<div class="carousel-item">${generateSVG(j)}<svg fill='#fff' width='100%' height='20%'><rect width='100%' height='20%'></rect></svg><div class="carousel-caption"> <h5>${direction.text}</h5> </div>`
 				}
-				j++;
 			}
+			j++;
 
 
 		} else {
@@ -340,6 +340,8 @@ function parseSegments() {
 	for(i; i < params.length; i++) {
 		segments.push(parseInt(params[i]));
 	}
+
+	segments.unshift(1);
 
 	return segments;
 }
