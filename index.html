@@ -1,4 +1,4 @@
-<html lang="en">
+<html>
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script src="javascript/query_parsing.js"></script>
-  <script src="javascript/index.js"></script>
   <title>Hospital Navigation</title>
   <style>
     body {
@@ -67,6 +66,35 @@
       background-color: #F6BD38;
       border-color: #F6BD38;
     }
+
+
+
+
+
+
+
+
+
+    @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
+    table.fold-table > tbody > tr.view td, table.fold-table > tbody > tr.view th {
+      cursor: pointer;
+    }
+    table.fold-table > tbody > tr.view:nth-child(4n-1) {
+      background: #eee;
+    }
+
+    table.fold-table > tbody > tr.view.open td:first-child:before, table.fold-table > tbody > tr.view.open th:first-child:before {
+      transform: rotate(-180deg);
+      color: #333;
+    }
+    table.fold-table > tbody > tr.fold {
+      display: none;
+    }
+    table.fold-table > tbody > tr.fold.open {
+      display: table-row;
+    }
+
   </style>
 </head>
 <body onload="generateDirs()">
@@ -80,7 +108,7 @@
       <!-- Tab panes -->
       <div class="tab-content">
         <div id="list" class="container tab-pane active"><br>
-          <table class="table">
+          <table class="table fold-table">
             <tbody id="dir_table">
             </tbody>
           </table>
@@ -123,5 +151,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="javascript/index.js"></script>
 </body>
 </html>
