@@ -1,4 +1,4 @@
-screen.orientation.lock();
+screen.orientation.lock("portrait");
 
 var floors = {"A": "L2",
 			  "B": "L1",
@@ -18,6 +18,9 @@ function generateDirs() {
 	let directions = [];
 	for (i = 0; i < tokens.length; i++) {
 		let token = tokens[i];
+
+		if(tokens[i + 1] === ";") break;
+
 		token = token.replaceAll("$", " ");
 		let direction = {};
 		switch(token.substring(0,1)) {

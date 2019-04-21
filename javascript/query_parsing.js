@@ -4,7 +4,7 @@ function getQueryVariable(variable) {
 	for (let i = 0; i < vars.length; i++) {
 		let pair = vars[i].split('=');
 		if (decodeURIComponent(pair[0]) === variable) {
-			return decodeURIComponent(pair[1]).replaceAll("$", " ");
+			return decodeURIComponent(pair[1]).replaceAll("$", " ").replaceAll("|", "&");
 		}
 	}
 	console.log('Query variable %s not found', variable);
