@@ -106,7 +106,7 @@ function drawPath(floorToDraw) {
 				ctx.lineTo(point.x/10, point.y/10);
 			}
 			ctx.lineWidth = 1;
-			ctx.strokeStyle = "red";
+			ctx.strokeStyle = "BLUE";
 			ctx.stroke();
 		}
 	});

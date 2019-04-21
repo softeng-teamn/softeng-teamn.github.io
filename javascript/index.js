@@ -19,7 +19,7 @@ function generateDirs() {
 	for (i = 0; i < tokens.length; i++) {
 		let token = tokens[i];
 
-		if(tokens[i + 1] === ";") break;
+		if(tokens[i + 1] === ";" || i === (tokens.length - 1)) break;
 
 		token = token.replaceAll("$", " ");
 		let direction = {};
