@@ -10,6 +10,18 @@
   <script src="javascript/query_parsing.js"></script>
   <title>Hospital Navigation</title>
   <style>
+
+    .ants {
+      stroke-dasharray: 50 25;
+      animation: dash 5s linear infinite;
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -300;
+      }
+    }
+
     body {
       margin-bottom: 50px;
     }
