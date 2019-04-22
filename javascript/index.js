@@ -1,5 +1,3 @@
-screen.orientation.lock("portrait");
-
 var floors = {"A": "L2",
 			  "B": "L1",
 			  "C": "G",
@@ -14,7 +12,7 @@ function getDirectionTokens() {
 }
 
 function generateSVG(segId) {
-	let pathTemplate = "<path style='fill: none;stroke: {color};stroke-width: 10px;' d='{coords}'/>";
+	let pathTemplate = "<path style='fill: none;stroke: {color};stroke-width: 16px;' d='{coords}'/>";
 	let svg = "<svg xmlns='http://www.w3.org/2000/svg' width='350' height='238' viewBox='{translateX} {translateY} 350 238'><defs><pattern id='img{id}' width='1000px' height='680px' patternUnits='userSpaceOnUse'><image href='{image}'/></pattern></defs><g transform='scale(1)'><rect width='5000' height='3400' style='fill:url(#img{id})'/></g><g transform='scale(.2)'>{path}</g></svg>";
 
 	let id = Math.floor(Math.random() * 9999999999999);
@@ -67,9 +65,9 @@ function generateSVG(segId) {
 				}
 
 				if(segCount - 2 === segId) {
-					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#F00").replace("{coords}", pathCoords);
+					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#50A0F0").replace("{coords}", pathCoords);
 				} else {
-					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#000").replace("{coords}", pathCoords);
+					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#000000").replace("{coords}", pathCoords);
 				}
 				pathCoords = "";
 
