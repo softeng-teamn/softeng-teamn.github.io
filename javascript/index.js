@@ -65,9 +65,9 @@ function generateSVG(segId) {
 				}
 
 				if(segCount - 2 === segId) {
-					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#50A0F0").replace("{coords}", pathCoords);
+					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#3080E0").replace("{coords}", pathCoords);
 				} else {
-					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#000000").replace("{coords}", pathCoords);
+					svgPathsBySegment[key] += pathTemplate.replace("{color}", "#787878").replace("{coords}", pathCoords);
 				}
 				pathCoords = "";
 
