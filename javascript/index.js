@@ -4,7 +4,8 @@ var floors = {"A": "L2",
 			  "D": "1",
               "E": "2",
 			  "F": "3",
-              "G": "4"};
+              "G": "4",
+			  "H": "FL"};
 
 function getDirectionTokens() {
 	let value = getQueryVariable("dirs");
@@ -116,6 +117,8 @@ function generateSVG(segId) {
 		case "L2":
 			svg = svg.replace("{image}", "images/L2.png");
 			break;
+		case "FL":
+			return;
 	}
 
 	return svg;
