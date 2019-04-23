@@ -12,13 +12,16 @@ function getDirectionTokens() {
 	return value.split(',');
 }
 
-function generateSVG(segId) {
+function generateSVG(segId, width) {
 	let pathTemplate = "<path class='ants' style='fill: none;stroke: {color};stroke-width: 16px;' d='{coords}'/>";
-	let svg = "<svg xmlns='http://www.w3.org/2000/svg' width='350' height='238' viewBox='{translateX} {translateY} 350 238'><defs><pattern id='img{id}' width='1000px' height='680px' patternUnits='userSpaceOnUse'><image href='{image}'/></pattern></defs><g transform='scale(1)'><rect width='5000' height='3400' style='fill:url(#img{id})'/></g><g transform='scale(.2)'>{path}</g></svg>";
+	let svg = "<svg xmlns='http://www.w3.org/2000/svg' width='{width}' height='238' viewBox='{translateX} {translateY} {width} 238'><defs><pattern id='img{id}' width='1000px' height='680px' patternUnits='userSpaceOnUse'><image href='{image}'/></pattern></defs><g transform='scale(1)'><rect width='5000' height='3400' style='fill:url(#img{id})'/></g><g transform='scale(.2)'>{path}</g></svg>";
+
+
 
 	let id = Math.floor(Math.random() * 9999999999999);
 
 	svg = svg.replaceAll("{id}", id);
+	svg = svg.replaceAll("{width}", width);
 
 	let floor = "";
 	let segCountForId = -1;
@@ -92,7 +95,7 @@ function generateSVG(segId) {
 	let centerX = (x2 + x1) / 2;
 	let centerY = (y2 + y1) / 2;
 
-	svg = svg.replace("{translateX}", "" + ((centerX / 5) - 350/2));
+	svg = svg.replace("{translateX}", "" + ((centerX / 5) - width/2));
 	svg = svg.replace("{translateY}", "" + ((centerY / 5) - 238/2));
 
 	switch(floor) {
@@ -265,16 +268,16 @@ function generateDirs() {
 					"        </tr>" +
 					"		<tr class='fold'><td colspan=\"7\">\n" +
 					"        <div class=\"fold-content\">" +
-					generateSVG(j) +
+					generateSVG(j, 296) +
 					"</div></td></tr>";
 
 
 
 
 				if (i === 0) {
-					caro.innerHTML += `<div class='carousel-item active'> ${generateSVG(j)} <svg width='100%' height='20%'><rect fill='#fff' width='100%' height='20%'></rect></svg><div class='carousel-caption'> <h5>${direction.text}</h5></div>`
+					caro.innerHTML += `<div class='carousel-item active'> ${generateSVG(j, 350)} <svg width='100%' height='20%'><rect fill='#fff' width='100%' height='20%'></rect></svg><div class='carousel-caption'> <h5>${direction.text}</h5></div>`
 				} else {
-					caro.innerHTML += `<div class="carousel-item">${generateSVG(j)}<svg fill='#fff' width='100%' height='20%'><rect width='100%' height='20%'></rect></svg><div class="carousel-caption"> <h5>${direction.text}</h5> </div>`
+					caro.innerHTML += `<div class="carousel-item">${generateSVG(j, 350)}<svg fill='#fff' width='100%' height='20%'><rect width='100%' height='20%'></rect></svg><div class="carousel-caption"> <h5>${direction.text}</h5> </div>`
 				}
 			}
 			j++;
