@@ -267,9 +267,9 @@ function generateDirs() {
 					"          <td>" + direction.text + "</td>\n" +
 					"        </tr>" +
 					"		<tr class='fold'><td colspan=\"7\">\n" +
-					"        <div class=\"fold-content\">" +
+					"        <div class=\"fold-content\"><object>" +
 					generateSVG(j, 296) +
-					"</div></td></tr>";
+					"</object></div></td></tr>";
 
 
 
