@@ -290,15 +290,23 @@ function generateDirs() {
 				"          <td>" + direction.text + "</td>\n" +
 				"        </tr>";
 		}
-
-
-
-		$(function(){
-			$(".fold-table tr.view").on("click", function(){
-				$(this).toggleClass("open").next(".fold").toggleClass("open");
-			});
-		});
 	}
+
+	if (j % 2 === 0) {
+		document.getElementById("dir_table").innerHTML += "\n" +
+			"        <tr class='view'>\n" +
+			"          <td scope=\"row\"></td>\n" +
+			"        </tr>" +
+			"		<tr class='fold'><td colspan=\"7\"></td></tr>";
+	}
+
+
+	$(function(){
+		$(".fold-table tr.view").on("click", function(){
+			console.log("Click");
+			$(this).toggleClass("open").next(".fold").toggleClass("open");
+		});
+	});
 }
 
 let scale = 5;
