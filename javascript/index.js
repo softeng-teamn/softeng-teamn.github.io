@@ -100,25 +100,25 @@ function generateSVG(segId, width) {
 
 	switch(floor) {
 		case "1":
-			svg = svg.replace("{image}", "images/F1.png");
+			svg = svg.replace("{image}", "images/F1.jpg");
 			break;
 		case "2":
-			svg = svg.replace("{image}", "images/F2.png");
+			svg = svg.replace("{image}", "images/F2.jpg");
 			break;
 		case "3":
-			svg = svg.replace("{image}", "images/F3.png");
+			svg = svg.replace("{image}", "images/F3.jpg");
 			break;
 		case "4":
-			svg = svg.replace("{image}", "images/F4.png");
+			svg = svg.replace("{image}", "images/F4.jpg");
 			break;
 		case "G":
-			svg = svg.replace("{image}", "images/ground.png");
+			svg = svg.replace("{image}", "images/ground.jpg");
 			break;
 		case "L1":
-			svg = svg.replace("{image}", "images/L1.png");
+			svg = svg.replace("{image}", "images/L1.jpg");
 			break;
 		case "L2":
-			svg = svg.replace("{image}", "images/L2.png");
+			svg = svg.replace("{image}", "images/L2.jpg");
 			break;
 		case "FL":
 			return;
